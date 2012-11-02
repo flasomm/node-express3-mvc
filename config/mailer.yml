@@ -1,0 +1,22 @@
+development:
+  url: "http://localhost:3000"
+  mailer: smtp
+  from: "noreply@localhost"
+  host: "localhost"
+  port: 25
+  use_authentication: 0
+  user: ""
+  pass: ""
+test:
+  url: "http://localhost"
+  mailer: "test"
+  from: "noreply@example.com"
+production:
+  mailer: smtp
+  url: "http://yoursitename.tld"
+  from: "noreply@yoursitename.tld"
+  host: "localhost"
+  port: 25
+  use_authentication: 0
+  user: ""
+  pass: ""

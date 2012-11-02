@@ -1,0 +1,9 @@
+<div id="error-message-box">
+	<p>Error 500 - Sorry, something went wrong.</p>
+	<% if(config.debug && ('undefined' !== typeof showStack)){ %>	
+		<div id="error-stack-trace">
+	    <% if(showStack) %>
+	      <pre><%= error.stack %></pre>
+		</div>
+	<% } %>
+</div>

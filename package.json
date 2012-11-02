@@ -1,0 +1,27 @@
+{
+	"name": "node-express3-mvc"
+	, "version": "0.0.1"
+	, "engines": ["node >= 0.8.1"]
+	, "main": "app.js"
+   , "private": true
+   , "description": "Ready for use mvc express3 nodejs architecture (nodejs, express3, mongodb, everyauth)"
+   , "author": "Physalix (http://github.com/physalix)"
+  , "dependencies": 
+	{
+     	"express"							:  ">= 3.0.0"
+		, "express-messages"				: 	">= 0.0.2"
+		, "express-validator"			: 	">= 0.2.0"		
+	 	, "ejs"								:  ">= 0"
+	  	, "ejs-ext"							:  ">= 0"
+	  	, "ejs-ext"							:  ">= 0"		
+    	, "mongoose"						: 	">= 2.4.9"
+		, "connect-mongodb"				: 	">= 1.1.2"
+   	, "everyauth"						: 	"git+ssh://git://github.com/bnoguchi/everyauth.git#express3"
+    	, "yaml-config"					: 	">= 0.1.0"
+		, "gzippo" 							: 	">= 0.1.4"
+		, "phx-mailer"						:  "git+ssh://git@github.com:physalix/phx-mailer.git"
+		, "phx-utils"						:  "git+ssh://git@github.com:physalix/phx-utils.git"				
+  }
+}
+
+

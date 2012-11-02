@@ -1,0 +1,9 @@
+<div id="error-message-box">
+	<p>404 - Sorry, we could not find that page.</p>
+	<% if(config.debug && ('undefined' !== typeof showStack)){ %>
+		<div id="error-stack-trace">
+	    <% if(showStack) %>
+	      <pre><%= error.stack %></pre>
+		</div>
+	<% } %>
+</div>

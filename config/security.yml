@@ -1,0 +1,49 @@
+development:
+  debug:  false
+  baseURL: 'http://localhost:3000/'
+  redirURL: '/home'
+  google:
+    appId: '<your_appid>'
+    appSecret: '<your_appsecret>'
+  facebook:
+    appId: '<your_appid>'
+    appSecret: '<your_appsecret>'
+  twitter:
+    consumerKey: '<your_consumerkey>'
+    consumerSecret: '<your_consumersecret>'
+  github:
+    clientID: '<your_clientid>'
+    secret: '<your_secret>'
+  linkedin:
+    apiKey: '<your_apikey>'
+    secret: '<your_secret>'
+  foursquare:
+    clientId: '<your_clientid>'
+    secret: '<your_secret>'
+  local:
+    verifyEmail: yes
+
+production:
+  debug:  false
+  baseURL: 'http://localhost:3000/'
+  redirURL: '/home'
+  google:
+    appId: '<your_appid>'
+    appSecret: '<your_appsecret>'
+  facebook:
+    appId: '<your_appid>'
+    appSecret: '<your_appsecret>'
+  twitter:
+    consumerKey: '<your_consumerkey>'
+    consumerSecret: '<your_consumersecret>'
+  github:
+    clientID: '<your_clientid>'
+    secret: '<your_secret>'
+  linkedin:
+    apiKey: '<your_apikey>'
+    secret: '<your_secret>'
+  foursquare:
+    clientId: '<your_clientid>'
+    secret: '<your_secret>'
+  local:
+    verifyEmail: yes

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+	<html lang="en">
+	  <head>
+	    <title><%= config.appName %> | <%= title %></title>		
+	    <link rel="stylesheet" href="/css/start/jquery-ui-1.8.23.custom.css">
+	    <link rel="stylesheet" href="/css/style.css">	
+	    <meta name="viewport" content="width=500, initial-scale=0.5">
+	    <script type="text/javascript" src="/js/jquery/jquery-1.8.0.min.js"></script>
+	    <script type="text/javascript" src="/js/rails.js"></script>
+	  </head>
+	  <body>
+	    <div id="container">
+       	<%- messages() %>
+
+      	<%- body %>
+
+	    </div>
+	  </body>
+	  <script>
+	    $('#messages a.close').click(function () {
+	      $(this).parent().fadeOut('slow');
+	    });
+	  </script>	
+</html>

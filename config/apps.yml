@@ -1,0 +1,19 @@
+development:
+  appName: "Node-Express3-mvc"
+  debug: true
+  slogan: "Ready for use mvc express3 nodejs architecture (nodejs, express3, mongodb, everyauth)"
+  baseURL: "http://localhost:3000"
+  frontDomain: "localhost"
+  backDomain: "localhost.admin"  
+  emailFrom: 'fs@physalix.com'
+  paginateNumber: 15
+
+production:
+  appName: "Node-Express3-mvc"
+  debug: false
+  slogan: "Ready for use mvc express3 nodejs architecture (nodejs, express3, mongodb, everyauth)"
+  baseURL: "http://localhost:3000"
+  frontDomain: "localhost"
+  backDomain: "localhost.admin"  
+  emailFrom: 'fs@physalix.com'
+  paginateNumber: 15
