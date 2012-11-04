@@ -1,0 +1,15 @@
+<div class="top_links">
+<nav>
+	<% if (everyauth.user) { %>
+			<% if (everyauth.user.firstname && everyauth.user.lastname) { %>
+					<%= everyauth.user.firstname %> <%= everyauth.user.lastname %> |
+			<% } else { %>
+					<%= everyauth.user.username %> |
+			<% } %>
+			<a href="/logout">SignOut</a>
+	<% } else { %>
+	<% response.redirect('/') %>
+	<% } %>
+</nav>
+
+</div>

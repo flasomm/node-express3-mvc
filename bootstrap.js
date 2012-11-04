@@ -6,6 +6,8 @@ var express = require('express')
   	, gzippo = require('gzippo')
   	, mongoStore = require('connect-mongodb')
 	, everyauth = require('everyauth')
+	, engine = require('ejs-locals')
+	, flash = require('connect-flash')
 	, expressValidator = require('express-validator')
 	, fs = require('fs')
   	, url = require('url');
@@ -17,40 +19,49 @@ exports.init = function(app){
 // App settings and middleware
 
 function bootApplication(app) {	
-  app.configure(function(){
+	
+	// Init helpers
+	require('./lib/helpers').init(app);
+	
+	app.configure(function(){
 
-    // set views path, template engine and default layout
-    app.set('views', __dirname + '/apps/'+app.settings.name+'/views');
-    app.set('view engine', 'ejs');
-	  //app.register('.html', require('ejs'))
-	  //app.set('view engine', 'html')
-    app.set('view options', { layout: 'layouts/default' });
+		// set views path, template engine and default layout
+		app.set('views', __dirname + '/apps/' + app.settings.name + '/views');	
+		app.set('view engine', 'ejs');
+		app.engine('ejs', engine);
 
-    // contentFor & content view helper - to include blocks of content only on required pages
-    app.use(function(req, res, next){
-      // expose the current path as a view local
-      res.locals.path = url.parse(req.url).pathname;
+		//app.register('.html', require('ejs'))
+		//app.set('view engine', 'html')
+	
+		//app.set('view options', { layout: 'layouts/default' });
 
-      next();
-    });
+		// contentFor & content view helper - to include blocks of content only on required pages
+		app.use(function(req, res, next){
+			// expose the current path as a view local
+			res.locals.path = url.parse(req.url).pathname;
 
-    // bodyParser should be above methodOverride
-    // app.use(express.bodyParser({keepExtensions: true, uploadDir:'/public/images/uploads'}));
-	 app.use(express.bodyParser());
-    app.use(expressValidator);
-    app.use(express.methodOverride());
+			next();
+		});
 
-    // cookieParser should be above session
-    app.use(express.cookieParser());
-    	app.use(express.session({
-      	secret: config.appName,
+		// bodyParser should be above methodOverride
+		// app.use(express.bodyParser({keepExtensions: true, uploadDir:'/public/images/uploads'}));
+		app.use(express.bodyParser());
+		app.use(expressValidator);
+		app.use(express.methodOverride());
+
+		// cookieParser should be above session
+		app.use(express.cookieParser());
+		app.use(express.session({
+			secret: config.appName,
       	store: new mongoStore({
         		url: config_db.uri,
         		collection : 'sessions'
-      	})
-    	}));
-
-    	app.use(express.logger(':method :url :status'));
+			})
+		}));
+		
+				
+		app.use(flash());	// set flash support with connect-flash
+		app.use(express.logger(':method :url :status'));
     	app.use(express.favicon());
 
 		// gzippo only for production use
@@ -63,7 +74,7 @@ function bootApplication(app) {
 		}
 
 		// everyauth setup
-		app.use(everyauth.middleware());
+		app.use(everyauth.middleware(app));
 
 		// Bootstrap controllers
 		var controllers_path = __dirname + '/apps/'+app.settings.name+'/controllers';
@@ -72,17 +83,11 @@ function bootApplication(app) {
 		  require(controllers_path+'/'+file)(app);
 		});
 		
-		// Setup everyauth helper for express		
-		app.use(everyauth.middleware(app));
-
     	// routes should be at the last
     	app.use(app.router);
 
   });
 
-
-	// Init helpers
-	require('./lib/helpers').init(app);
 
   // Don't use express errorHandler as we are using custom error handlers
   // app.use(express.errorHandler({ dumpExceptions: false, showStack: false }))

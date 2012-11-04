@@ -1,0 +1,44 @@
+<div class="clearfix">
+	<label for="username">Username</label>
+  <div class="input">
+		<input type="text" name="User[username]" value="<%= usr.username %>" id="username">
+  </div>
+</div>
+	<div class="clearfix">
+		<label for="email">Email</label>
+	  <div class="input">
+		<% var hasEmail = (usr.email === undefined ? false : true) %>
+		<% if(!hasEmail) { %>
+			<input type="text" name="User[email]" value="" id="email">
+		<% } else { %>
+			<input type="text" name="User[email]" value="<%= usr.email %>" id="email">			
+		<% } %>
+  </div>
+</div>
+<div class="clearfix">
+	<label for="firstname">Firstname</label>
+  <div class="input">
+		<input type="text" name="User[firstname]" value="<%= usr.firstname %>" id="firstname">
+  </div>
+</div>
+<div class="clearfix">
+	<label for="lastname">Lastname</label>
+  <div class="input">
+		<input type="text" name="User[lastname]" value="<%= usr.lastname %>" id="lastname">
+  </div>
+</div>
+<div class="clearfix">
+	<label for="gender">Gender</label>
+  <div class="input">
+			<input type="radio" name="User[gender]" value="m" <% if('m' === usr.gender){ %> checked <%}%>> Male
+			<input type="radio" name="User[gender]" value="f" <% if('f' === usr.gender){ %> checked <%}%>> Female<br>		
+		</select>
+	</div>
+</div>
+<div class="clearfix">
+  <label for="User_activated">User Activated ?</label>
+  <div class="input">		
+			<input type="checkbox" name="User[activated]" value="activated" <% if(usr.activated && (usr.activated !== undefined)){ %> checked <% } %>>
+			<input id="User_id" type="hidden" name="User[id]" value="<%= usr.id %>">			
+	</div>
+</div>

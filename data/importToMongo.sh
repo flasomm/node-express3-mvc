@@ -1,0 +1,1 @@
+mongoimport -d nodexpress3 -c users data/users.json

@@ -1,0 +1,39 @@
+<% layout('../layouts/default') -%>
+<%
+	if(everyauth.loggedIn){
+%>
+<script type="text/javascript" charset="utf-8">
+	window.location = "/dashboard"
+</script>
+<%
+	}
+%>
+
+<div class="login-container">
+	<div class="login-box">
+		<form id="loginForm" action="/login" method="post" name="loginForm">
+			<div class="login-form">
+				<h2>
+					<em>Connexion</em> à l'espace privée
+				</h2>
+				<div id="messages"></div>
+					<div class="input-box input-left">
+						<label for="username">Nom d'utilisateur :</label>
+						<input type="text" class="required-entry input-text" value="" name="email" id="email">
+					</div>
+					<div class="input-box input-right">
+						<label for="login">Mot de passe :</label>
+						<input type="password" value="" class="required-entry input-text" name="password" id="password">
+					</div>
+					<div class="clear"></div>
+					<div class="form-buttons">
+						<input type="submit" title="Connexion" value="Connexion" class="form-button">
+					</div>
+				</div>
+				<p class="legal">
+					Copyright © 2012 <%= config.appName %>.
+				</p>
+			</form>
+		<div class="bottom"></div>
+	</div>
+</div>

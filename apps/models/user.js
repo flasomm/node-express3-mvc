@@ -1,4 +1,5 @@
-var phxUtil 	= require('phx-utils');
+var phxUtil 	= require('phx-utils'),
+	 Validator 	= require('validator').Validator;
 
 var exports = module.exports = UserSchema = new Schema({});
 
@@ -6,6 +7,11 @@ UserSchema.add({
 	email:      			{type: String, index: true, unique: true }, 
 	password: 				{type: String }, 
   	activated:  			{type: Boolean, default: true },
+  	username: 				{type: String, default : '', required : true, index: true },
+  	firstname: 				{type: String, default : '', required : false, index: true },
+  	lastname: 				{type: String, default : '', required : false, index: true },
+  	gender: 					{type: String, default : 'm', required : true },
+	created_at: 			{type: Date, default: Date.now },
   	google: 	{
 		id: 					{type: String, default : '', index: true },
 		accessToken: 		{type: String, default : '', index: false },
@@ -60,12 +66,7 @@ UserSchema.add({
 		location: 			{type: String, default : '', index: false },
 		time_zone: 			{type: String, default : '', index: false },
 		lang: 				{type: String, default : '', index: false }
-	},
-  	username: 				{type: String, default : '', required : true, index: true },
-  	firstname: 				{type: String, default : '', required : false, index: true },
-  	lastname: 				{type: String, default : '', required : false, index: true },
-  	gender: 					{type: String, default : 'm', required : true },
-	created_at: 			{type: Date, default: Date.now }
+	}
 });
 
 
@@ -77,6 +78,83 @@ UserSchema.statics.findUserById = function (id, callback) {
 	this.findOne({_id: id}, callback);
 };
 
+
+/**
+ * Authenticate user 
+ *
+ * @api static
+ */
+UserSchema.statics.login = function(email, password, callback) {
+	var User = mongoose.model('User');
+	
+	this.findOne({ email: email}, function (err, user) {
+		if (err) callback(err, null);
+		if(user) {
+
+			if (user.email && user.password === User.sign(password, 'md5')) {
+				callback(err, user);
+			} else {
+				callback(null, null);
+			}
+
+		} else {
+			callback(null, null);
+		}
+	});
+};
+
+/**
+ * Encode string with hash method sha1 or md5
+ *
+ * @api static
+ * @todo move to phxUtil.strings
+ */
+UserSchema.statics.sign = function(str, hash) {
+	return require('crypto').createHash(hash).update(str.toString()).digest('hex');	
+};
+
+/**
+ * Register user (not used)
+ *
+ * @api static
+ */
+UserSchema.statics.register = function(usr, callback) {
+	var User = mongoose.model('User');
+	var user = new User();
+	
+	callback(err, user);
+}
+
+/**
+ * Validate user form when create or update
+ *
+ * @api static
+ */
+UserSchema.statics.validateUser = function(req) {
+	req.assert(['User', 'email'], 'Please enter a valid Email').isEmail();		
+  	req.assert(['User', 'username'], 'Please enter a Username').notEmpty();
+  	req.assert(['User', 'firstname'], 'Please enter a Firstname.').notEmpty();
+  	req.assert(['User', 'lastname'], 'Please enter a Lastname.').notEmpty();	
+  	req.assert(['User', 'gender'], 'Please fill out gender.').notEmpty();	
+	return req.validationErrors();
+};
+
+/**
+ * Update user
+ *
+ * @api static
+ */
+UserSchema.methods.updateAll = function(user, callback) {
+	var User = mongoose.model('User');
+	this.username 		= user.username;
+	this.firstname 	= user.firstname;
+	this.lastname 		= user.lastname;
+	this.email 			= user.email;
+	this.gender			= user.gender;
+	this.activated 	= (typeof user.activated === "undefined" ? false : true);
+	
+	this.save(callback);					// save the user		
+};
 
 /** 
  * Update Authentication Google Data with google openid + oauth2

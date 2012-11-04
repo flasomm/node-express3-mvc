@@ -1,0 +1,21 @@
+<% layout('../layouts/default') -%>
+<%-partial('../includes/header')%>
+
+<div class="header">
+	<h2>New user</h2>
+</div>
+
+<div class="menu">
+	<a href="/users/" class="btn">Back to index</a>
+</div>
+
+<div id="main">
+	<form action="/users/create" method="post" id="user_form" accept-charset="utf-8">
+			<% include form.ejs %>
+	  <div class="actions">
+			<input type="submit" value="Create user" class="btn primary"> or
+			<a href="/users/" class="btn">Cancel</a>
+	  </div>
+	</form>
+	
+</div>

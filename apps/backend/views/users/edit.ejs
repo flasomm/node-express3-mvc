@@ -1,0 +1,25 @@
+<% layout('../layouts/default') -%>
+<%-partial('../includes/header')%>
+
+<div class="header">
+	<h2>Edit user</h2>
+</div>
+
+<div class="menu">
+	<a href="/users/new" class="btn">New user</a>
+</div>
+
+<div id="main">
+	<form action="/users/update" method="post" id="user_form" accept-charset="utf-8">
+		
+		<div class="user-form">	
+			<% include form.ejs %>			
+		</div>
+	  <div class="actions">
+			<input type="submit" value="Update user" id="submit_user" class="btn primary"> or
+			<a href="/users/" class="btn">Cancel</a>
+	  </div>
+		
+	</form>
+	
+</div>

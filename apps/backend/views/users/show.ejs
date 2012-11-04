@@ -1,0 +1,22 @@
+<% layout('../layouts/default') -%>
+<%-partial('../includes/header')%>
+
+<div class="menu">
+	<a href="/users/new" class="btn">New user</a>
+	<a href="/users/" class="btn">Back to index</a>	
+<br/>
+	<a href="/users/edit/<%= usr.id %>" class="btn primary">Edit</a><br/>
+	<a href="/users/delete/<%= usr.id %>" class="btn danger" onclick="return confirm('Are you sure you want to delete?')">Delete</a>
+</div>
+
+<div id="main">
+
+	<div id="content">
+			<div class="profile">
+				<div class="details">
+					<h2><%= usr.username %> (<%= usr.email %>)</h2>
+					<div class="name"><%= usr.firstname %> <%= usr.lastname %></div>					
+				</div>
+			</div>
+		</div>
+</div>
