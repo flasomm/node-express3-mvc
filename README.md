@@ -2,11 +2,11 @@ node-express3-mvc
 =================
 
 This is a boilerplate node.js application working with express v3, mongoose, mongoDB and everyauth, 
-illustrating mvc features used web development. 
+illustrating mvc features used in web development. 
 The demo app has a frontend and a backend to manage users and others.
 It is possible to use signin using facebook, twitter, github and simple registrations. 
 The backend has a simple CRUD section for users, the only object implemented on this demo.
-Mailer is available too.
+Sending email is available too.
 
 **Note:** You need to have node.js and mongodb installed and running
 
@@ -16,7 +16,7 @@ $ git clone git://github.com/physalix/node-express3-mvc.git
 $ npm install
 ```
 
-**NOTE:**  Import the database with the following command
+Import the database with the following command
 
 ```sh
 $ sh data/importToMongo.sh
