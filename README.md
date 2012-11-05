@@ -61,6 +61,9 @@ Then visit [http://localhost:3000/](http://localhost:3000/) for the frontend and
   |__database.js (db config)
   |__mailer.js 	 (mailer config)
   |__security.js (auth config)
+-data/
+  |__importToMongo.sh
+  |__users.json
 -lib/
   |__auth-handler.js 	(authentication lib)
   |__db-connect.js 		(database lib)
