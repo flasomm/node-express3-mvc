@@ -12,18 +12,21 @@ Mailer is available too.
 
 ## Install
 ```sh
-  $ git clone git://github.com/physalix/node-express3-mvc.git
-  $ npm install
-  $ sh data/importToMongo.sh
+$ git clone git://github.com/physalix/node-express3-mvc.git
+$ npm install
 ```
 
 **NOTE:**  Import the database with the following command
 
 ```sh
-  $ sh data/importToMongo.sh
+$ sh data/importToMongo.sh
 ```
 
-**NOTE:** Do not forget to update your application parameters in `config/app.js` `config/database.js` `config/mailer.js` `config/security.js`
+**NOTE:** Do not forget to update your application parameters in : 
+  * `config/app.js`
+  * `config/database.js`
+  * `config/mailer.js`
+  * `config/security.js`
 
 ## Quick start
 Start the server:
@@ -78,7 +81,6 @@ up with a demo as earliest as I can. Please feel free to fork and send updates :
   * Unit testing
   * Mailer implementation
   * Images management
-  * ...
 
 ---
 
