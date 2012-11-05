@@ -19,7 +19,7 @@
 		, "connect-mongodb"				: 	">= 1.1.2"
 		, "validator"						: 	">= 0.1.0"		
    	, "everyauth"						: 	"git+ssh://git@github.com:bnoguchi/everyauth.git#express3"
-    	, "yaml-config"					: 	">= 0.1.0"
+    	, "yaml-config"					: 	"= 0.2.0"
 		, "gzippo" 							: 	">= 0.1.4"
 		, "phx-pagination"				: 	"git+ssh://git@github.com:physalix/phx-pagination.git"		
 		, "phx-mailer"						:  "git+ssh://git@github.com:physalix/phx-mailer.git"
