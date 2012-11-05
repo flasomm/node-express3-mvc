@@ -4,7 +4,7 @@ node-express3-mvc
 This is a boilerplate node.js application working with express v3, mongoose, mongoDB and everyauth, 
 illustrating mvc features used in web development. 
 The demo app has a frontend and a backend to manage users and others.
-It is possible to use signin using facebook, twitter, github and simple registrations. 
+It is possible to use signin using google, facebook, twitter, github and simple registrations. 
 The backend has a simple CRUD section for users, the only object implemented on this demo.
 Sending email is available too.
 
