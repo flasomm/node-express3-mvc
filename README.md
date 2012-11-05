@@ -80,6 +80,7 @@ up with a demo as earliest as I can. Please feel free to fork and send updates :
 
 ## Features
   * Express v3 implementation [Express](http://github.com/visionmedia/express.git)
+  * Easily add urls with new app (frontend, backend, socket, rest, ...)
   * Authentication with [Everyauth](http://github.com/bnoguchi/everyauth)
   * Send email with [Phx-mailer](http://github.com/physalix/phx-mailer.git)
   * HTTP helpers (redirection, caching, etc)
