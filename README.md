@@ -16,7 +16,7 @@ $ git clone git://github.com/physalix/node-express3-mvc.git
 $ npm install
 ```
 
-Import the database with the following command
+Import the database
 
 ```sh
 $ sh data/importToMongo.sh
@@ -38,6 +38,8 @@ Then visit [http://localhost:3000/](http://localhost:3000/) for the frontend and
 
 ## Directory structure
 ```
+-app.js
+-bootstrap.js
 -apps/
   |__backend/
   |____controllers/
@@ -50,7 +52,10 @@ Then visit [http://localhost:3000/](http://localhost:3000/) for the frontend and
   |______includes/
   |______layouts/
   |__models/
+  |______user.js
   |__emails/
+  |______test.html
+  |______test.txt
 -config/
   |__app.js			 (apps config)
   |__database.js (db config)
