@@ -21,7 +21,7 @@
    	, "everyauth"						: 	"git+ssh://git@github.com:bnoguchi/everyauth.git#express3"
     	, "yaml-config"					: 	"= 0.2.0"
 		, "gzippo" 							: 	">= 0.1.4"
-		, "phx-pagination"				: 	"git+ssh://git@github.com:physalix/phx-pagination.git"		
+		, "phx-pagination"				: 	"git+ssh://git@github.com:physalix/phx-pagination.git#express3"		
 		, "phx-mailer"						:  "git+ssh://git@github.com:physalix/phx-mailer.git"
 		, "phx-utils"						:  "git+ssh://git@github.com:physalix/phx-utils.git"				
   }
