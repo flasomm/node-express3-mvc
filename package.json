@@ -27,7 +27,7 @@
   }
   , "bundleDependencies": [
     "date-utils"
-  ],
+  ]
 }
 
 
