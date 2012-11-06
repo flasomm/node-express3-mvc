@@ -1,30 +1,33 @@
 {
-	"name": "node-express3-mvc"
-	, "version": "0.0.1"
-	, "engines": ["node >= 0.8.1"]
-	, "main": "app.js"
+   "name": "node-express3-mvc"
+   , "version": "0.0.1"
+   , "engines": ["node >= 0.8.1"]
+   , "main": "app.js"
    , "private": true
    , "description": "Ready for use mvc express3 nodejs architecture (nodejs, express3, mongodb, everyauth)"
    , "author": "Physalix (http://github.com/physalix)"
-  , "dependencies": 
-	{
-     	"express"							:  ">= 3.0.0"
-		, "express-messages"				: 	">= 0.0.2"
-		, "connect-flash"					: 	">= 0.1.0"		
-		, "express-validator"			: 	">= 0.2.0"		
-	 	, "ejs"								:  ">= 0"
-	  	, "ejs-ext"							:  ">= 0"
-	  	, "ejs-locals"						:  ">= 0.2.5"		
-    	, "mongoose"						: 	">= 2.4.9"
-		, "connect-mongodb"				: 	">= 1.1.2"
-		, "validator"						: 	">= 0.1.0"		
-   	, "everyauth"						: 	"git+ssh://git@github.com:bnoguchi/everyauth.git#express3"
-    	, "yaml-config"					: 	"= 0.2.0"
-		, "gzippo" 							: 	">= 0.1.4"
-		, "phx-pagination"				: 	"git+ssh://git@github.com:physalix/phx-pagination.git"		
-		, "phx-mailer"						:  "git+ssh://git@github.com:physalix/phx-mailer.git"
-		, "phx-utils"						:  "git+ssh://git@github.com:physalix/phx-utils.git"				
+  , "dependencies": {
+     	"express"		: ">= 3.0.0"
+	, "express-messages"	: ">= 0.0.2"
+	, "connect-flash"	: ">= 0.1.0"		
+	, "express-validator"	: ">= 0.2.0"		
+	, "ejs"			: ">= 0"
+	, "ejs-ext"		: ">= 0"
+	, "ejs-locals"		: ">= 0.2.5"		
+    	, "mongoose"		: ">= 2.4.9"
+	, "connect-mongodb"	: ">= 1.1.2"
+	, "validator"		: ">= 0.1.0"		
+   	, "everyauth"		: "git+ssh://git@github.com:bnoguchi/everyauth.git#express3"
+    	, "yaml-config"		: "= 0.2.0"
+    	, "date-utils"		: ">= 1.2.12"
+	, "gzippo" 		: ">= 0.1.4"
+	, "phx-pagination"	: "git+ssh://git@github.com:physalix/phx-pagination.git"		
+	, "phx-mailer"		: "git+ssh://git@github.com:physalix/phx-mailer.git"
+	, "phx-utils"		: "git+ssh://git@github.com:physalix/phx-utils.git"				
   }
+  , "bundleDependencies": [
+    "date-utils"
+  ],
 }
 
 
