@@ -36,6 +36,11 @@ $ node app
 
 Then visit [http://localhost:3000/](http://localhost:3000/) for the frontend and [http://localhost.admin:3000/](http://localhost.admin:3000/) for the backend
 
+## Backend authentication
+Login: fs@physalix.com
+Password: admin
+
+
 ## Directory structure
 ```
 -app.js

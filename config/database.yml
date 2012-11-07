@@ -1,9 +1,9 @@
 development:
   driver: "mongoose" # Not used
   uri:    "mongodb://localhost/nodexpress3"
-  debug:  true
+  debug:  false
 
 production:
   driver: "mongoose" # Not used
   uri:    "mongodb://localhost/nodexpress3"
-  debug:  true
+  debug:  false

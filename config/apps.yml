@@ -1,6 +1,6 @@
 development:
   appName: "Node-Express3-mvc"
-  debug: true
+  debug: false
   slogan: "Ready for use mvc express3 nodejs architecture (nodejs, express3, mongodb, everyauth)"
   baseURL: "http://localhost:3000"
   frontDomain: "localhost"
