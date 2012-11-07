@@ -17,13 +17,13 @@
     	, "mongoose"		: ">= 2.4.9"
 	, "connect-mongodb"	: ">= 1.1.2"
 	, "validator"		: ">= 0.1.0"		
-   	, "everyauth"		: "git://git@github.com:bnoguchi/everyauth.git#express3"
+   	, "everyauth"		: "git+ssh://git@github.com:bnoguchi/everyauth.git#express3"
     	, "yaml-config"		: "= 0.2.0"
     	, "date-utils"		: ">= 1.2.12"
 	, "gzippo" 		: ">= 0.1.4"
-	, "phx-pagination"	: "git://git@github.com:physalix/phx-pagination.git"		
-	, "phx-mailer"		: "git://git@github.com:physalix/phx-mailer.git"
-	, "phx-utils"		: "git://git@github.com:physalix/phx-utils.git"				
+	, "phx-pagination"	: "https://github.com/physalix/phx-pagination.git"		
+	, "phx-mailer"		: "https://github.com/physalix/phx-mailer.git"
+	, "phx-utils"		: "https://github.com/physalix/phx-utils.git"				
   }
   , "bundleDependencies": [
     "date-utils"
