@@ -16,14 +16,9 @@ $ git clone git://github.com/physalix/node-express3-mvc.git
 $ npm install
 ```
 
-Import the database
-
-Start mongodb before importing:
-```
-$ sudo mongod
-```
-
+Start mongodb before importing the database :
 ```sh
+$ sudo mongod
 $ sh data/importToMongo.sh
 ```
 
