@@ -21,9 +21,9 @@
     	, "yaml-config"		: "= 0.2.0"
     	, "date-utils"		: ">= 1.2.12"
 	, "gzippo" 		: ">= 0.1.4"
-	, "phx-pagination"	: "https://github.com/physalix/phx-pagination.git"
-	, "phx-mailer"		: "https://github.com/physalix/phx-mailer.git"
-	, "phx-utils"		: "https://github.com/physalix/phx-utils.git"
+	, "phx-pagination"	: ">= 0.0.2"
+	, "phx-mailer"		: ">= 0.3.0"
+	, "phx-utils"		: ">= 0.1.0"
   }
   , "bundleDependencies": [
     "date-utils"
