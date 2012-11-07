@@ -29,6 +29,11 @@ $ sh data/importToMongo.sh
   * `config/security.js`
 
 ## Quick start
+Start mongodb:
+```
+$ sudo mongod
+```
+
 Start the server:
 ```
 $ node app
