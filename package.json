@@ -21,7 +21,7 @@
    , "yaml-config"         : "= 0.2.0"
    , "date-utils"          : "= 1.2.12"
    , "gzippo"              : "= 0.2.0"
-   , "phx-pagination"      : "= 0.0.2"
+   , "phx-pagination"      : "= 0.1.1"
    , "phx-mailer"          : "= 0.1.0"
    , "phx-utils"           : "= 0.1.0"
   }
